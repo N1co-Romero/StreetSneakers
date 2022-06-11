@@ -1,3 +1,4 @@
+$color1: #49ea66;
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +10,7 @@ body{
     width: 100%;
     height: 100%;
     a{
-        color: #19ea66;
+        color: $color1;
         text-decoration: none;
     }
     html{
@@ -19,20 +20,29 @@ body{
 
 }
 header{
-    font-size: large;
+    .nav-item{
+        font-size: 20px;
+    }
+    .navbar-brand{
+        font-size: 20px;
+    }
     .navbar-toggler-icon{
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2825, 234, 102, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
     a:visited{
-        color: #19ea66;
+        color: $color1;
+        &:hover{
+            color: #1c442b;
+        }
     }
+    
 }
 /*index*/
 main{
     h3{
         text-align: center;
         padding: 30px;
-        color: #49ea66;
+        color: $color1;
         font-family: "Poppins", Sans-serif
     }
     .grid-container{
@@ -40,7 +50,13 @@ main{
         background-color: rgb(0, 0, 0);
         grid-template-columns: auto auto auto auto auto auto;
         justify-content: space-evenly;
-        
+        div{
+            transition: all 1s;
+            &:hover{
+                transform: translateY(-15px);
+                box-shadow: 0 12px 16px rgba(0,0,0,2);
+            }
+        }
     }
     @media all and (max-width: 992px){
         .grid-container{
@@ -58,7 +74,7 @@ main{
     h3{
         text-align: center;
         padding: 30px;
-        color: #49ea66;
+        color: $color1;
         font-family: "Poppins", Sans-serif
     }
     .contenedor{
@@ -73,6 +89,7 @@ main{
         .cardd{
             img{
                 width: 300px;
+                border: solid 1px $color1;
             }
             h4{
                 color: #49ea66;
@@ -86,25 +103,27 @@ main{
             a{
                 font-weight: 500;
             }
-        width: 300px;
-        height: 550px;
+        width: 310px;
+        height: 580px;
         border-radius: 8px;
         box-shadow: 0 2px 2px rgba(0,0,0,2);
         overflow: hidden;
         text-align: center;
-        transition: all 0.25;
+        transition: all 1s;
         background-color: rgba(0, 0, 0, 0);
-        }
-        .cardd:hover{
+        padding: 10px;
+        &:hover{
             transform: translateY(-15px);
-        box-shadow: 0 12px 16px rgba(0,0,0,2);
+            box-shadow: 0 12px 16px rgba(0,0,0,2);
         }
+        }
+        
     }
     @media (max-width: 992px){
         .contenedor{
             display: grid;
             grid-template-columns: auto auto;
-            justify-content: space-around;
+            justify-content: center;
         }
     }
     @media (max-width: 768px){
@@ -112,6 +131,49 @@ main{
             display: grid;
             grid-template-columns: auto;
             justify-content: center;
+        }
+    }
+    .boton-con{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;  
+    }
+    .boton{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        width: 180px;
+        height: 45px;
+        background-color: #000c04;
+        font-size: 17px;
+        color: rgb(255, 255, 255);
+        border: solid 1px $color1;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: .3s ease all;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+        &::after{
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: $color1;
+            position: absolute;
+            z-index: 1;
+            top: -50px;
+            left: 0px;
+            transition: .3s ease-in-out all;
+        }
+        span{
+            position: relative;
+            z-index: 2;
+            transition: .3s ease all;
+        }
+        &:hover::after{
+            top: 0;
         }
     }
 }
@@ -143,8 +205,8 @@ main{
             height: 50px;
             padding: 10px;
             margin-top: 15px;
-            border: 1px solid  #19ea66;
-            color: #19ea66;
+            border: 1px solid  $color1;
+            color: $color1;
             border-radius: 5px;
             background: black;
             font-family: "Poppins", Sans-serif
@@ -164,7 +226,7 @@ main{
             background-color: #000c04;
             font-size: 17px;
             color: rgb(255, 255, 255);
-            border: solid 1px #19ea66;
+            border: solid 1px $color1;
             cursor: pointer;
             text-transform: uppercase;
             transition: .3s ease all;
@@ -175,7 +237,7 @@ main{
                 content: "";
                 width: 100%;
                 height: 100%;
-                background-color: #19ea66 ;
+                background-color: $color1;
                 position: absolute;
                 z-index: 1;
                 top: -50px;
@@ -193,14 +255,14 @@ main{
         }
     }
 }
-/*snickers*/
+/*sneakers*/
 .background-snickers{
     width: 100%;
     height: auto;
     background-color: black;
     h1{
         text-align: center;
-        color: #49ea66;
+        color: $color1;
         font-family: Arial, Helvetica, sans-serif;
         padding: 30px
     }
@@ -225,17 +287,19 @@ main{
             box-shadow: 0 2px 2px rgba(0,0,0,2);
             overflow: hidden;
             text-align: center;
-            transition: all 0.25;
+            transition: all 1s;
             background-color: rgba(0, 0, 0, 0);
+            
             img{
                 width: 300px;
+                border: solid 1px $color1;
             }
             &:hover{
                 transform: translateY(-15px);
                 box-shadow: 0 12px 16px rgba(0,0,0,2);
             }
             h4{
-                color: #49ea66;
+                color: $color1;
                 font-size: 15px;
             }
             a{
@@ -262,15 +326,143 @@ main{
     }
     
 }
+/*giftcards*/
+.main-giftcards{
+    margin-bottom: 150px;
+    div{
+        width: 100%;
+        max-width: 1200px;
+        height: auto;
+        display: flex;
+        flex-direction:row;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin: auto;
+        .img-padre{
+            padding: 10px;
+        }
+        .p-padre{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            h1{
+                padding: 5px;
+                color: $color1;
+            }
+            p{
+                padding: 5px;
+                color: $color1;
+            }
+            button{
+                width: 100%;
+                display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 45px;
+            background-color: #000c04;
+            font-size: 17px;
+            color: rgb(255, 255, 255);
+            border: solid 1px $color1;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: .3s ease all;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+            &::after{
+                content: "";
+                width: 100%;
+                height: 100%;
+                background-color: $color1;
+                position: absolute;
+                z-index: 1;
+                top: -50px;
+                left: 0px;
+                transition: .3s ease-in-out all;
+            }
+            span{
+                position: relative;
+                z-index: 2;
+                transition: .3s ease all;
+            }
+            &:hover::after{
+                top: 0;
+            }
+
+            }
+
+        }
+    }
+    @media (max-width: 992px){
+        .section-giftcard-padre{
+            display: grid;
+            grid-template-columns: auto;
+            justify-content: space-around;
+        }
+    }
+}
+/*font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif*/
+.gift-productos1{
+    h3{
+        text-align: center;
+        color: $color1;
+        font-weight: 500;
+    }
+    p{
+        text-align: center;
+        color: $color1;
+    }
+    .div-productos1{
+        width: 100%;
+        max-width: 1200px;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+        background-color: black;
+        
+        div{
+            
+            img{
+                width: 300px;
+            }
+            h5{
+                color: $color1;
+            }
+            width: 310px;
+            height: 300px;
+            border-radius: 8px;
+            box-shadow: 0 2px 2px rgba(0,0,0,2);
+            overflow: hidden;
+            text-align: center;
+            transition: all 1s;
+            background-color: rgba(0, 0, 0, 0);
+            padding: 10px;
+            &:hover{
+                transform: translateY(-15px);
+                box-shadow: 0 12px 16px rgba(0,0,0,2);
+            }
+        }
+    }
+    @media (max-width: 992px){
+        .div-productos1{
+            display: grid;
+            grid-template-columns: auto;
+            justify-content: space-around;
+        }
+    }
+}
+
 
 /*nostros*/
 .nosotros-main{
     div{
-        color: #19ea66;
+        color: $color1;
         padding: 50px;
         font-size: 125%;
         h1{
-            color: #19ea66;
+            color: $color1;
         }
     }
     
