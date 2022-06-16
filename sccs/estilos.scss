@@ -1,4 +1,46 @@
 $color1: #49ea66;
+@mixin boton ($ancho:180px) {
+    display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        width: $ancho;
+        height: 45px;
+        background-color: #000c04;
+        font-size: 17px;
+        color: rgb(255, 255, 255);
+        border: solid 1px $color1;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: .3s ease all;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+        &::after{
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: $color1;
+            position: absolute;
+            z-index: 1;
+            top: -50px;
+            left: 0px;
+            transition: .3s ease-in-out all;
+        }
+        span{
+            position: relative;
+            z-index: 2;
+            transition: .3s ease all;
+        }
+        &:hover::after{
+            top: 0;
+        }
+}
+@mixin media {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+}
 * {
     margin: 0;
     padding: 0;
@@ -121,16 +163,7 @@ main{
     }
     @media (max-width: 992px){
         .contenedor{
-            display: grid;
-            grid-template-columns: auto auto;
-            justify-content: center;
-        }
-    }
-    @media (max-width: 768px){
-        .contenedor{
-            display: grid;
-            grid-template-columns: auto;
-            justify-content: center;
+            @include media();
         }
     }
     .boton-con{
@@ -140,41 +173,7 @@ main{
         justify-content: center;  
     }
     .boton{
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        align-content: center;
-        width: 180px;
-        height: 45px;
-        background-color: #000c04;
-        font-size: 17px;
-        color: rgb(255, 255, 255);
-        border: solid 1px $color1;
-        cursor: pointer;
-        text-transform: uppercase;
-        transition: .3s ease all;
-        border-radius: 5px;
-        position: relative;
-        overflow: hidden;
-        &::after{
-            content: "";
-            width: 100%;
-            height: 100%;
-            background-color: $color1;
-            position: absolute;
-            z-index: 1;
-            top: -50px;
-            left: 0px;
-            transition: .3s ease-in-out all;
-        }
-        span{
-            position: relative;
-            z-index: 2;
-            transition: .3s ease all;
-        }
-        &:hover::after{
-            top: 0;
-        }
+        @include boton();
     }
 }
 .formulario{
@@ -218,40 +217,7 @@ main{
             justify-content: center;  
         }
         .boton{
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 180px;
-            height: 45px;
-            background-color: #000c04;
-            font-size: 17px;
-            color: rgb(255, 255, 255);
-            border: solid 1px $color1;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: .3s ease all;
-            border-radius: 5px;
-            position: relative;
-            overflow: hidden;
-            &::after{
-                content: "";
-                width: 100%;
-                height: 100%;
-                background-color: $color1;
-                position: absolute;
-                z-index: 1;
-                top: -50px;
-                left: 0px;
-                transition: .3s ease-in-out all;
-            }
-            span{
-                position: relative;
-                z-index: 2;
-                transition: .3s ease all;
-            }
-            &:hover::after{
-                top: 0;
-            }
+            @include boton()
         }
     }
 }
@@ -312,16 +278,7 @@ main{
     }
     @media (max-width: 992px){
         .contenedor{
-            display: grid;
-            grid-template-columns: auto auto;
-            justify-content: space-around;
-        }
-    }
-    @media (max-width: 768px){
-        .contenedor{
-            display: grid;
-            grid-template-columns: auto;
-            justify-content: center;
+            @include media()
         }
     }
     
@@ -354,41 +311,7 @@ main{
                 color: $color1;
             }
             button{
-                width: 100%;
-                display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            height: 45px;
-            background-color: #000c04;
-            font-size: 17px;
-            color: rgb(255, 255, 255);
-            border: solid 1px $color1;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: .3s ease all;
-            border-radius: 5px;
-            position: relative;
-            overflow: hidden;
-            &::after{
-                content: "";
-                width: 100%;
-                height: 100%;
-                background-color: $color1;
-                position: absolute;
-                z-index: 1;
-                top: -50px;
-                left: 0px;
-                transition: .3s ease-in-out all;
-            }
-            span{
-                position: relative;
-                z-index: 2;
-                transition: .3s ease all;
-            }
-            &:hover::after{
-                top: 0;
-            }
-
+                @include boton(100%)
             }
 
         }
@@ -447,9 +370,7 @@ main{
     }
     @media (max-width: 992px){
         .div-productos1{
-            display: grid;
-            grid-template-columns: auto;
-            justify-content: space-around;
+            @include media()
         }
     }
 }
