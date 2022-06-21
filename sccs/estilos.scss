@@ -64,21 +64,22 @@ body{
 header{
     .nav-item{
         font-size: 20px;
+        a{
+            color: $color1;
+            &:hover{
+                color: #21532a;
+            }
+        }
     }
     .navbar-brand{
         font-size: 20px;
+        color: $color1;
+        &:hover{
+            color: #21532a;
+        }
     }
     .navbar-toggler-icon{
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2825, 234, 102, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    }
-    a{
-        color: $color1;
-        &:visited{
-            color: $color1;
-        }
-        &:hover{
-            color: #1c442b;
-        }
     }
     
 }
