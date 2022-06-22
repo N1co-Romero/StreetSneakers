@@ -149,6 +149,11 @@ main .grid-container div:hover {
 
 .productos-main .contenedor .cardd a {
   font-weight: 500;
+  color: #49ea66;
+}
+
+.productos-main .contenedor .cardd a:hover {
+  color: #21532a;
 }
 
 .productos-main .contenedor .cardd:hover {
@@ -409,6 +414,11 @@ main .grid-container div:hover {
 
 .background-snickers .contenedor .cardd a {
   font-weight: 500;
+  color: #49ea66;
+}
+
+.background-snickers .contenedor .cardd a:hover {
+  color: #21532a;
 }
 
 @media (max-width: 992px) {
@@ -637,23 +647,37 @@ main .grid-container div:hover {
       align-content: center;
 }
 
-.soon-div h2 {
-  color: #49ea66;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.soon-div .div-1 {
+  width: 90%;
 }
 
-.soon-div p {
+.soon-div .div-1 h2 {
   color: #49ea66;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.soon-div .div-1 p {
+  color: #49ea66;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .soon-div .v-inicio {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin-top: 15px;
 }
 

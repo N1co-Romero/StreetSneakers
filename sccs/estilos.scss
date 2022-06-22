@@ -148,6 +148,10 @@ main{
             }
             a{
                 font-weight: 500;
+                color: $color1;
+                &:hover{
+                    color: #21532a;
+                }
             }
         width: 310px;
         height: 580px;
@@ -274,7 +278,10 @@ main{
             }
             a{
                 font-weight: 500;
-                
+                color: $color1;
+                &:hover{
+                    color: #21532a;
+                }
             }
             
         }
@@ -408,26 +415,33 @@ main{
         display: grid;
         justify-content: center;
         align-content: center;
-        h2{
-            color: $color1;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-        }
-        p{
-            color: $color1;
-            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        .div-1{
+            width: 90%;
+            h2{
+                color: $color1;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                justify-content: center;
+                align-content: center;
+            }
+            p{
+                color: $color1;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                justify-content: center;
+                align-content: center;
+            }
         }
         .v-inicio{
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             margin-top: 15px;
             a{
                 color: $color1;
                 font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                 font-size: large;
+                
             }
         }
     }
-
 
 /*footer*/
 footer{
