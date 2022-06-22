@@ -416,7 +416,16 @@ main{
             color: $color1;
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
         }
-
+        .v-inicio{
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+            a{
+                color: $color1;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: large;
+            }
+        }
     }
 
 
